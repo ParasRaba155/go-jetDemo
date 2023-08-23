@@ -1,0 +1,10 @@
+
+CREATE TABLE IF NOT EXISTS tasks(
+    id uuid DEFAULT gen_random_uuid () PRIMARY KEY,
+    user_email VARCHAR(50) NOT NULL REFERENCES users(email),
+    Name VARCHAR(20) NOT NULL,
+    Details VARCHAR(150),
+    Status BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
+    updated_at  TIMESTAMP NOT NULL DEFAULT CURRENT_DATE
+);
